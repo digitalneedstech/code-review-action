@@ -55,7 +55,7 @@ jobs:
           githubPullRequestNumber: 2
           gitCommitHash: ${{ github.event.pull_request.head.sha }}
           temperature: "0.2"
-          level: "pr-comment",
+          level: "pr-comment"
           maxNewTokens: "250"
           topK: "50"
           topP: "0.95"
