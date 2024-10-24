@@ -9,12 +9,12 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
-import json
-import os
+import json 
+import os 
 from typing import List
 
-import click
-import requests
+import click   
+import requests 
 from langchain import LLMChain, HuggingFaceHub, PromptTemplate
 from langchain_openai import AzureChatOpenAI
 from loguru import logger
@@ -25,6 +25,8 @@ import os
 import boto3
 
 def check_required_env_vars():
+
+    
     """Check required environment variables"""
     required_env_vars = [
         "API_KEY",
