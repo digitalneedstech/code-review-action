@@ -43,7 +43,7 @@ jobs:
             cat "diff.txt";
             echo 'EOF';
           } >> $GITHUB_OUTPUT
-      - uses: digitalneedstech/LLM-Code-Review@1.0.2
+      - uses: digitalneedstech/LLM-Code-Review@1.1.2
         name: "Code Review"
         id: review
         with:
@@ -52,9 +52,10 @@ jobs:
           sessionToken: ${{ secrets.SESSION_TOKEN }}
           githubToken: ${{ secrets.TOKEN }}
           githubRepository: "code-review-action"
-          githubPullRequestNumber: 1
+          githubPullRequestNumber: 2
           gitCommitHash: ${{ github.event.pull_request.head.sha }}
           temperature: "0.2"
+          level: "pr-comment",
           maxNewTokens: "250"
           topK: "50"
           topP: "0.95"
