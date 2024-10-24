@@ -9,22 +9,33 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
-import json
-import os
-from typing import List
 
+import json   
+import os
+from typing import List     
+
+import click2
 import click
-import requests
+import requests  
+from langchain import LLMChain    
+from langchain.prompts import PromptTemplate
+from loguru import logger 
+from langchain_google_genai import ChatGoogleGenerativeAI
+
 from langchain import LLMChain, HuggingFaceHub, PromptTemplate
-from langchain_openai import AzureChatOpenAI
-from loguru import logger
-from langchain_aws import ChatBedrock
+from langchain_openai import AzureChatOpenAI   
+from loguru import logger    
+from langchain_aws import ChatBedrock 
 from langchain import PromptTemplate, LLMChain
 from langchain_core.prompts import ChatPromptTemplate
 import os
 import boto3
 
-def check_required_env_vars():
+
+
+def check_required_env_vars():  
+    print("hi2E")
+    list=[]
     """Check required environment variables"""
     required_env_vars = [
         "API_KEY",
